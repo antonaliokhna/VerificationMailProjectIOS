@@ -23,6 +23,8 @@ class ViewController: UIViewController {
         spacing: 20
     )
 
+    private let verificationViewModel: VerificationViewModelType = VerificationViewModel()
+
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .init(white: 1, alpha: 0.9)
@@ -60,12 +62,14 @@ extension ViewController: CollectionViewActionsDelegateType {
 //MARK: - TextFieldActionsDelegateType
 
 extension ViewController: TextFieldActionsDelegateType {
-    func textFieldShouldChange(text: String) {
-        print(text)
+    func textFieldShouldChange(mailAdress: String) {
+        verificationViewModel.filteredDomains(by: mailAdress)
+        domainsCollectionView.reloadData()
     }
 
     func textFieldShouldClear() {
-        print("clear")
+        verificationViewModel.clearFilteredDomains()
+        domainsCollectionView.reloadData()
     }
 }
 
@@ -73,7 +77,7 @@ extension ViewController: TextFieldActionsDelegateType {
 
 extension ViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        return verificationViewModel.getFilteredDomainsCount()
     }
 
     func collectionView(
@@ -85,6 +89,8 @@ extension ViewController: UICollectionViewDataSource {
                 as? DomainCollectionViewCell else {
             return UICollectionViewCell()
         }
+
+        cell.setTitle(text: verificationViewModel.getFilteredDomain(by: indexPath))
 
         return cell
     }

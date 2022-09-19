@@ -12,7 +12,6 @@ class DomainCollectionViewCell: UICollectionViewCell {
 
     let domainLabel: UILabel = {
         let label = UILabel()
-        label.text = "@gmail.com"
         label.font = .systemFont(ofSize: 20)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
@@ -38,6 +37,10 @@ class DomainCollectionViewCell: UICollectionViewCell {
         contentView.backgroundColor = .lightGray
         contentView.layer.cornerRadius = 10
         contentView.alpha = 0.5
+    }
+
+    func setTitle(text: String) {
+        domainLabel.text = text
     }
 }
 

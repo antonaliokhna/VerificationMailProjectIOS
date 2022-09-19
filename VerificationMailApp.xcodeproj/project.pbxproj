@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6457387F28D8732F00FEBA26 /* VerificationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6457387E28D8732F00FEBA26 /* VerificationModel.swift */; };
+		6457388128D8754300FEBA26 /* VerificationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6457388028D8754300FEBA26 /* VerificationViewModel.swift */; };
+		6457388328D877C900FEBA26 /* VerificationViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6457388228D877C900FEBA26 /* VerificationViewModelType.swift */; };
 		64DA2D5928D603360069E08F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64DA2D5828D603360069E08F /* AppDelegate.swift */; };
 		64DA2D5B28D603360069E08F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64DA2D5A28D603360069E08F /* SceneDelegate.swift */; };
 		64DA2D5D28D603360069E08F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64DA2D5C28D603360069E08F /* ViewController.swift */; };
@@ -23,6 +26,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6457387E28D8732F00FEBA26 /* VerificationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerificationModel.swift; sourceTree = "<group>"; };
+		6457388028D8754300FEBA26 /* VerificationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerificationViewModel.swift; sourceTree = "<group>"; };
+		6457388228D877C900FEBA26 /* VerificationViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerificationViewModelType.swift; sourceTree = "<group>"; };
 		64DA2D5528D603360069E08F /* VerificationMailApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VerificationMailApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		64DA2D5828D603360069E08F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		64DA2D5A28D603360069E08F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -52,6 +58,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6457387C28D8730100FEBA26 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				6457388028D8754300FEBA26 /* VerificationViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		6457387D28D8730A00FEBA26 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				6457387E28D8732F00FEBA26 /* VerificationModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		64DA2D4C28D603360069E08F = {
 			isa = PBXGroup;
 			children = (
@@ -73,8 +95,8 @@
 			children = (
 				64DA2D7028D608070069E08F /* Protocols */,
 				64DA2D6F28D607FB0069E08F /* Views */,
-				64DA2D6D28D607E70069E08F /* ViewModels */,
-				64DA2D6C28D6078C0069E08F /* Models */,
+				6457387C28D8730100FEBA26 /* ViewModels */,
+				6457387D28D8730A00FEBA26 /* Models */,
 				64DA2D7F28D713FE0069E08F /* Extensions */,
 				64DA2D5828D603360069E08F /* AppDelegate.swift */,
 				64DA2D5A28D603360069E08F /* SceneDelegate.swift */,
@@ -84,20 +106,6 @@
 				64DA2D6628D603380069E08F /* Info.plist */,
 			);
 			path = VerificationMailApp;
-			sourceTree = "<group>";
-		};
-		64DA2D6C28D6078C0069E08F /* Models */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
-		64DA2D6D28D607E70069E08F /* ViewModels */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewModels;
 			sourceTree = "<group>";
 		};
 		64DA2D6F28D607FB0069E08F /* Views */ = {
@@ -114,6 +122,7 @@
 			children = (
 				64DA2D8428D745690069E08F /* TextFieldActionsDelegateType.swift */,
 				64DA2D8828D752820069E08F /* CollectionViewActionsDelegateType.swift */,
+				6457388228D877C900FEBA26 /* VerificationViewModelType.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -243,13 +252,16 @@
 				64DA2D7C28D6241E0069E08F /* DomainCollectionViewCell.swift in Sources */,
 				64DA2D7428D60A7C0069E08F /* StatusLabel.swift in Sources */,
 				64DA2D5D28D603360069E08F /* ViewController.swift in Sources */,
+				6457388328D877C900FEBA26 /* VerificationViewModelType.swift in Sources */,
 				64DA2D5928D603360069E08F /* AppDelegate.swift in Sources */,
 				64DA2D5B28D603360069E08F /* SceneDelegate.swift in Sources */,
 				64DA2D8228D714270069E08F /* StackViewExtension.swift in Sources */,
 				64DA2D7A28D623400069E08F /* DomainsCollectionView.swift in Sources */,
 				64DA2D7828D60DC10069E08F /* VerificationButton.swift in Sources */,
+				6457388128D8754300FEBA26 /* VerificationViewModel.swift in Sources */,
 				64DA2D8528D745690069E08F /* TextFieldActionsDelegateType.swift in Sources */,
 				64DA2D8928D752820069E08F /* CollectionViewActionsDelegateType.swift in Sources */,
+				6457387F28D8732F00FEBA26 /* VerificationModel.swift in Sources */,
 				64DA2D7628D60BA90069E08F /* MailTextField.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

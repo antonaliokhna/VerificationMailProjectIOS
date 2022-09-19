@@ -60,7 +60,7 @@ extension MailTextField: UITextFieldDelegate {
 
         if let text = textField.text, let textRange = Range(range, in: text) {
             let updatedText = text.replacingCharacters(in: textRange, with: string)
-            actionsDelegate?.textFieldShouldChange(text: updatedText)
+            actionsDelegate?.textFieldShouldChange(mailAdress: updatedText)
         }
         return true
     }

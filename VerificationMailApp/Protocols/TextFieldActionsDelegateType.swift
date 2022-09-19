@@ -8,6 +8,6 @@
 import Foundation
 
 protocol TextFieldActionsDelegateType: AnyObject {
-    func textFieldShouldChange(text: String)
+    func textFieldShouldChange(mailAdress: String)
     func textFieldShouldClear()
 }
