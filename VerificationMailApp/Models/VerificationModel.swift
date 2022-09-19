@@ -11,6 +11,7 @@ struct VerificationModel {
     private let correctDomainAdress = ["@gmail.com", "@icloud.com", "@yahoo.com", "@yandex.ru", "@mail.ru"]
 
     var filteredDomains: [String] = []
+    var filteredNameMailAdress = String()
 
     mutating func filterDomainsBy(mail text: String) {
         clearFilteredDomains()
@@ -20,6 +21,13 @@ struct VerificationModel {
         let domain = String(textRange)
 
         filteredDomains = correctDomainAdress.filter { $0.contains(domain) }
+    }
+
+    mutating func fulterMailAdress(currentAdress: String) {
+        guard let lastNameIndex = currentAdress.firstIndex(of: "@") else { return }
+        let lastIndex = currentAdress.index(before: lastNameIndex)
+        let firstIndex = currentAdress.startIndex
+        filteredNameMailAdress = String(currentAdress[firstIndex...lastIndex])
     }
 
     mutating func clearFilteredDomains() {

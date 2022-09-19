@@ -31,4 +31,11 @@ class VerificationViewModel: VerificationViewModelType {
         verificationModel.clearFilteredDomains()
     }
 
+    func getFullMailAdress(by indexPath: IndexPath, currentAdress: String) -> String {
+        verificationModel.fulterMailAdress(currentAdress: currentAdress)
+        let mailAdress = verificationModel.filteredNameMailAdress
+        let domain = getFilteredDomain(by: indexPath)
+        clearFilteredDomains()
+        return mailAdress + domain
+    }
 }

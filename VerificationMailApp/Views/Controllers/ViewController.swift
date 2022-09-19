@@ -55,11 +55,14 @@ class ViewController: UIViewController {
 
 extension ViewController: CollectionViewActionsDelegateType {
     func collectionViewSelectItemAt(indexPath: IndexPath) {
-        print(indexPath.row.description)
+        guard let mail = mailTextField.text else { return }
+        let fullAdress = verificationViewModel.getFullMailAdress(by: indexPath, currentAdress: mail)
+        mailTextField.setTitle(value: fullAdress)
+        domainsCollectionView.reloadData()
     }
 }
 
-//MARK: - TextFieldActionsDelegateType
+//MARK: - TextFieldActionsDelegateTypex
 
 extension ViewController: TextFieldActionsDelegateType {
     func textFieldShouldChange(mailAdress: String) {

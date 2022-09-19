@@ -38,6 +38,10 @@ class MailTextField: UITextField {
         layer.cornerRadius = 10
         translatesAutoresizingMaskIntoConstraints = false
     }
+
+    func setTitle(value: String) {
+        text = value
+    }
 }
 
 //MARK: - UITextFieldDelegate
