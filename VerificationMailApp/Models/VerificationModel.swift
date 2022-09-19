@@ -25,7 +25,7 @@ struct VerificationModel {
 
     mutating func fulterMailAdress(currentAdress: String) {
         guard let lastNameIndex = currentAdress.firstIndex(of: "@"),
-                lastNameIndex != currentAdress.startIndex else { return }
+              lastNameIndex != currentAdress.startIndex else { return }
         let lastIndex = currentAdress.index(before: lastNameIndex)
         let firstIndex = currentAdress.startIndex
         filteredNameMailAdress = String(currentAdress[firstIndex...lastIndex])

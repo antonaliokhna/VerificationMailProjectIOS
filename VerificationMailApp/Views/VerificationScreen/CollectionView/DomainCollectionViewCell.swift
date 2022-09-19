@@ -9,36 +9,36 @@ import Foundation
 import UIKit
 
 class DomainCollectionViewCell: UICollectionViewCell {
-
+    
     let domainLabel: UILabel = {
         let label = UILabel()
         label.font = .systemFont(ofSize: 20)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
-
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
-
+        
         setUpViews()
         setConstraints()
         configure()
     }
-
+    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-
+    
     private func setUpViews() {
         addSubview(domainLabel)
     }
-
+    
     private func configure() {
         contentView.backgroundColor = .lightGray
         contentView.layer.cornerRadius = 10
         contentView.alpha = 0.5
     }
-
+    
     func setTitle(text: String) {
         domainLabel.text = text
     }
