@@ -20,7 +20,9 @@ struct VerificationModel {
         let textRange = text[firstIndex...endIndex]
         let domain = String(textRange)
 
-        filteredDomains = correctDomainAdress.filter { $0.contains(domain) }
+        if !correctDomainAdress.contains(domain) {
+            filteredDomains = correctDomainAdress.filter { $0.contains(domain) }
+        }
     }
 
     mutating func fulterMailAdress(currentAdress: String) {
