@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class VerificationViewController: UIViewController {
 
     private let statusLabel = StatusLabel()
     private let mailTextField = MailTextField()
@@ -53,7 +53,7 @@ class ViewController: UIViewController {
 
 //MARK: - CollectionViewActionsDelegateType
 
-extension ViewController: CollectionViewActionsDelegateType {
+extension VerificationViewController: CollectionViewActionsDelegateType {
     func collectionViewSelectItemAt(indexPath: IndexPath) {
         guard let mail = mailTextField.text else { return }
         let fullAdress = verificationViewModel.getFullMailAdress(by: indexPath, currentAdress: mail)
@@ -65,7 +65,7 @@ extension ViewController: CollectionViewActionsDelegateType {
 
 //MARK: - TextFieldActionsDelegateTypex
 
-extension ViewController: TextFieldActionsDelegateType {
+extension VerificationViewController: TextFieldActionsDelegateType {
     func textFieldChange(mailAdress: String) {
         statusLabel.setTitle(value: mailAdress.isValidMailAdress())
         verificationViewModel.filteredDomains(by: mailAdress)
@@ -81,7 +81,7 @@ extension ViewController: TextFieldActionsDelegateType {
 
 //MARK: - UICollectionViewDataSource
 
-extension ViewController: UICollectionViewDataSource {
+extension VerificationViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return verificationViewModel.getFilteredDomainsCount()
     }
@@ -103,7 +103,7 @@ extension ViewController: UICollectionViewDataSource {
 
 //MARK: - setConstraints
 
-extension ViewController {
+extension VerificationViewController {
     private func setConstraints() {
         NSLayoutConstraint.activate([
             statusLabel.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: -100),
