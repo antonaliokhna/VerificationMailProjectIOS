@@ -66,6 +66,7 @@ extension ViewController: CollectionViewActionsDelegateType {
 
 extension ViewController: TextFieldActionsDelegateType {
     func textFieldShouldChange(mailAdress: String) {
+        print(mailAdress.isValidMailAdress())
         verificationViewModel.filteredDomains(by: mailAdress)
         domainsCollectionView.reloadData()
     }
