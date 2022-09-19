@@ -8,9 +8,11 @@
 import Foundation
 
 extension String {
-    func isValidMailAdress() -> Bool {
+    func isValidMailAdress() -> ValidationStatuses {
+        guard !self.isEmpty else { return .default }
+
         let format = "SELF MATCHES %@"
         let regEx = "[a-zA-Z0-9]+@[a-zA-Z]+\\.[a-zA-Z]{2,}"
-        return NSPredicate(format: format, regEx).evaluate(with: self)
+        return NSPredicate(format: format, regEx).evaluate(with: self) ? .success : .failure
     }
 }

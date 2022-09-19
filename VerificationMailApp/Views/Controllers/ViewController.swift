@@ -58,6 +58,7 @@ extension ViewController: CollectionViewActionsDelegateType {
         guard let mail = mailTextField.text else { return }
         let fullAdress = verificationViewModel.getFullMailAdress(by: indexPath, currentAdress: mail)
         mailTextField.setTitle(value: fullAdress)
+        statusLabel.setStatus(status: fullAdress.isValidMailAdress())
         domainsCollectionView.reloadData()
     }
 }
@@ -66,12 +67,13 @@ extension ViewController: CollectionViewActionsDelegateType {
 
 extension ViewController: TextFieldActionsDelegateType {
     func textFieldShouldChange(mailAdress: String) {
-        print(mailAdress.isValidMailAdress())
+        statusLabel.setStatus(status: mailAdress.isValidMailAdress())
         verificationViewModel.filteredDomains(by: mailAdress)
         domainsCollectionView.reloadData()
     }
 
     func textFieldShouldClear() {
+        statusLabel.setStatus(status: .default)
         verificationViewModel.clearFilteredDomains()
         domainsCollectionView.reloadData()
     }

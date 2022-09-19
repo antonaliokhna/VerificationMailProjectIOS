@@ -21,8 +21,22 @@ class StatusLabel: UILabel {
 
     private func configure() {
         font = .systemFont(ofSize: 22, weight: .medium)
-        text = "Mail is vaid"
-        textColor = .systemGreen
+        text = "Check your mail adress"
+        textColor = .systemBlue
         translatesAutoresizingMaskIntoConstraints = false
+    }
+
+    func setStatus(status: ValidationStatuses) {
+        switch status {
+        case .success:
+            text = "Mail is valid"
+            textColor = .systemGreen
+        case .failure:
+            text = "Mail is not valid"
+            textColor = .systemRed
+        case .default:
+            text = "Check your mail adress"
+            textColor = .systemBlue
+        }
     }
 }
