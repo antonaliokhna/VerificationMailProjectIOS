@@ -49,10 +49,13 @@ class MailTextField: UITextField {
 extension MailTextField: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         resignFirstResponder()
+
         return true
     }
+
     func textFieldShouldClear(_ textField: UITextField) -> Bool {
-        actionsDelegate?.textFieldShouldClear()
+        actionsDelegate?.textFieldClear()
+
         return true
     }
 
@@ -61,11 +64,11 @@ extension MailTextField: UITextFieldDelegate {
         shouldChangeCharactersIn range: NSRange,
         replacementString string: String
     ) -> Bool {
-
         if let text = textField.text, let textRange = Range(range, in: text) {
             let updatedText = text.replacingCharacters(in: textRange, with: string)
-            actionsDelegate?.textFieldShouldChange(mailAdress: updatedText)
+            actionsDelegate?.textFieldChange(mailAdress: updatedText)
         }
+
         return true
     }
 }

@@ -26,8 +26,8 @@ class StatusLabel: UILabel {
         translatesAutoresizingMaskIntoConstraints = false
     }
 
-    func setStatus(status: ValidationStatuses) {
-        switch status {
+    func setTitle(value: ValidationStatuses) {
+        switch value {
         case .success:
             text = "Mail is valid"
             textColor = .systemGreen
