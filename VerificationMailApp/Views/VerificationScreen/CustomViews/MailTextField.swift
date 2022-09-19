@@ -8,24 +8,24 @@
 import UIKit
 
 class MailTextField: UITextField {
-
+    
     weak var actionsDelegate: TextFieldActionsDelegateType?
-
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
-
+        
         setDelegate()
         configurate()
     }
-
+    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-
+    
     private func setDelegate() {
         delegate = self
     }
-
+    
     private func configurate() {
         font = .systemFont(ofSize: 20)
         backgroundColor = .white
@@ -38,7 +38,7 @@ class MailTextField: UITextField {
         layer.cornerRadius = 10
         translatesAutoresizingMaskIntoConstraints = false
     }
-
+    
     func setTitle(value: String) {
         text = value
     }
@@ -49,16 +49,16 @@ class MailTextField: UITextField {
 extension MailTextField: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         resignFirstResponder()
-
+        
         return true
     }
-
+    
     func textFieldShouldClear(_ textField: UITextField) -> Bool {
         actionsDelegate?.textFieldClear()
-
+        
         return true
     }
-
+    
     func textField(
         _ textField: UITextField,
         shouldChangeCharactersIn range: NSRange,
@@ -68,7 +68,7 @@ extension MailTextField: UITextFieldDelegate {
             let updatedText = text.replacingCharacters(in: textRange, with: string)
             actionsDelegate?.textFieldChange(mailAdress: updatedText)
         }
-
+        
         return true
     }
 }

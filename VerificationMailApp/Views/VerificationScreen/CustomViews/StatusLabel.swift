@@ -9,6 +9,22 @@ import UIKit
 
 class StatusLabel: UILabel {
 
+    private var status: ValidationStatuses = .default {
+        willSet {
+            switch newValue {
+            case .success:
+                text = "Mail is valid"
+                textColor = .systemGreen
+            case .failure:
+                text = "Mail is not valid"
+                textColor = .systemRed
+            case .default:
+                text = "Check your mail adress"
+                textColor = .systemBlue
+            }
+        }
+    }
+
     override init(frame: CGRect) {
         super.init(frame: frame)
 
@@ -21,22 +37,11 @@ class StatusLabel: UILabel {
 
     private func configure() {
         font = .systemFont(ofSize: 22, weight: .medium)
-        text = "Check your mail adress"
-        textColor = .systemBlue
         translatesAutoresizingMaskIntoConstraints = false
+        status = .default
     }
 
-    func setTitle(value: ValidationStatuses) {
-        switch value {
-        case .success:
-            text = "Mail is valid"
-            textColor = .systemGreen
-        case .failure:
-            text = "Mail is not valid"
-            textColor = .systemRed
-        case .default:
-            text = "Check your mail adress"
-            textColor = .systemBlue
-        }
+    func setStatus(value: ValidationStatuses) {
+        status = value
     }
 }
