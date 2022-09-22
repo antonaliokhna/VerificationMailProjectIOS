@@ -24,6 +24,7 @@ class VerificationViewController: UIViewController {
     )
 
     private let verificationViewModel: VerificationViewModelType = VerificationViewModel()
+    private lazy var dataFetcherService = DataFecherService()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,7 +48,37 @@ class VerificationViewController: UIViewController {
     }
 
     @objc private func verificationButtonTapped() {
-        print("Button tapped")
+        guard let mailAdress = mailTextField.text else { return }
+        dataFetcherService.fetchVerificationMailData(mailAdress: mailAdress) { mailResponseViewModel in
+            guard let mailResponse = mailResponseViewModel else {
+                CustomAlertController.showAlert(vc: self, title: "Error", message: "Data is empty")
+
+                return
+            }
+
+            guard let autocorrectMail = mailResponse.getAutoCorrectMail() else {
+                let message: String
+
+                if mailResponse.isDeliverable() {
+                    message = "Mail is deliverability"
+                } else {
+                    message = "Mail is not deliverability"
+                }
+                CustomAlertController.showAlert(vc: self, title: "Completion", message: message)
+
+                return
+            }
+
+            let alertAction = UIAlertAction(title: "Replace", style: .destructive) { _ in
+                self.mailTextField.setTitle(value: autocorrectMail)
+            }
+            CustomAlertController.showAlert(
+                vc: self,
+                title: "Invalid email",
+                message: "Did you meant? \n \(autocorrectMail)",
+                customActions: [alertAction]
+            )
+        }
     }
 }
 
@@ -58,6 +89,7 @@ extension VerificationViewController: CollectionViewActionsDelegateType {
         guard let mail = mailTextField.text else { return }
         let fullAdress = verificationViewModel.getFullMailAdress(by: indexPath, currentAdress: mail)
         let validationStatus = fullAdress.isValidMailAdress()
+        //TODO: Put in function
         mailTextField.setTitle(value: fullAdress)
         statusLabel.setStatus(value: validationStatus)
         verificationButton.setStatus(value: validationStatus)
