@@ -47,7 +47,7 @@ class VerificationViewController: UIViewController {
         verificationButton.addTarget(self, action: #selector(verificationButtonTapped), for: .touchUpInside)
     }
 
-    private func changeViewsStatus(status: ValidationStatuses) {
+    private func setViewsStatus(status: ValidationStatuses) {
         statusLabel.setStatus(value: status)
         verificationButton.setStatus(value: status)
     }
@@ -93,7 +93,7 @@ extension VerificationViewController: CollectionViewActionsDelegateType {
     func collectionViewSelectItemAt(indexPath: IndexPath) {
         guard let mail = mailTextField.text else { return }
         let fullAdress = verificationViewModel.getFullMailAdress(by: indexPath, currentAdress: mail)
-        self.changeViewsStatus(status: fullAdress.isValidMailAdress())
+        self.setViewsStatus(status: fullAdress.isValidMailAdress())
         mailTextField.setTitle(value: fullAdress)
         domainsCollectionView.reloadData()
     }
@@ -103,14 +103,13 @@ extension VerificationViewController: CollectionViewActionsDelegateType {
 
 extension VerificationViewController: TextFieldActionsDelegateType {
     func textFieldChange(mailAdress: String) {
-        self.changeViewsStatus(status: mailAdress.isValidMailAdress())
+        self.setViewsStatus(status: mailAdress.isValidMailAdress())
         verificationViewModel.filteredDomains(by: mailAdress)
         domainsCollectionView.reloadData()
     }
 
     func textFieldClear() {
-        statusLabel.setStatus(value: .default)
-        verificationButton.setStatus(value: .default)
+        self.setViewsStatus(status: .default)
         verificationViewModel.clearFilteredDomains()
         domainsCollectionView.reloadData()
     }

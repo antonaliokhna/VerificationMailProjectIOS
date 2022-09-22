@@ -8,6 +8,7 @@
 import Foundation
 
 struct VerificationModel {
+    
     private let correctDomainAdress = ["@gmail.com", "@icloud.com", "@yahoo.com", "@yandex.ru", "@mail.ru"]
 
     var filteredDomains: [String] = []

@@ -8,6 +8,7 @@
 import Foundation
 
 class MailResponseViewModel: MailResponseViewModelType {
+
     private var mailResponseMocel: MailResponseModel
 
     init(mailResponseMocel: MailResponseModel) {
