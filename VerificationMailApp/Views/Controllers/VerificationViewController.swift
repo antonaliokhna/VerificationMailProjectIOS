@@ -47,6 +47,11 @@ class VerificationViewController: UIViewController {
         verificationButton.addTarget(self, action: #selector(verificationButtonTapped), for: .touchUpInside)
     }
 
+    private func changeViewsStatus(status: ValidationStatuses) {
+        statusLabel.setStatus(value: status)
+        verificationButton.setStatus(value: status)
+    }
+
     @objc private func verificationButtonTapped() {
         guard let mailAdress = mailTextField.text else { return }
         dataFetcherService.fetchVerificationMailData(mailAdress: mailAdress) { mailResponseViewModel in
@@ -88,11 +93,8 @@ extension VerificationViewController: CollectionViewActionsDelegateType {
     func collectionViewSelectItemAt(indexPath: IndexPath) {
         guard let mail = mailTextField.text else { return }
         let fullAdress = verificationViewModel.getFullMailAdress(by: indexPath, currentAdress: mail)
-        let validationStatus = fullAdress.isValidMailAdress()
-        //TODO: Put in function
+        self.changeViewsStatus(status: fullAdress.isValidMailAdress())
         mailTextField.setTitle(value: fullAdress)
-        statusLabel.setStatus(value: validationStatus)
-        verificationButton.setStatus(value: validationStatus)
         domainsCollectionView.reloadData()
     }
 }
@@ -101,9 +103,7 @@ extension VerificationViewController: CollectionViewActionsDelegateType {
 
 extension VerificationViewController: TextFieldActionsDelegateType {
     func textFieldChange(mailAdress: String) {
-        let validationStatus = mailAdress.isValidMailAdress()
-        statusLabel.setStatus(value: validationStatus)
-        verificationButton.setStatus(value: validationStatus)
+        self.changeViewsStatus(status: mailAdress.isValidMailAdress())
         verificationViewModel.filteredDomains(by: mailAdress)
         domainsCollectionView.reloadData()
     }

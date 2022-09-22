@@ -37,10 +37,13 @@ class MailTextField: UITextField {
         borderStyle = .none
         layer.cornerRadius = 10
         translatesAutoresizingMaskIntoConstraints = false
+        autocapitalizationType = .none
+        autocorrectionType = .no
     }
     
     func setTitle(value: String) {
         text = value
+        actionsDelegate?.textFieldChange(mailAdress: value)
     }
 }
 
