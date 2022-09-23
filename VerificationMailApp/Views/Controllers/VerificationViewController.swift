@@ -16,6 +16,11 @@ class VerificationViewController: UIViewController {
         frame: .zero,
         collectionViewLayout: UICollectionViewFlowLayout()
     )
+    private let activityIndicator: UIActivityIndicatorView = {
+        let activityIndicator = UIActivityIndicatorView(style: .large)
+        activityIndicator.translatesAutoresizingMaskIntoConstraints = false
+        return activityIndicator
+    }()
 
     private lazy var verificationStackView = UIStackView(
         arrangedSubviews: [mailTextField, verificationButton, domainsCollectionView],
@@ -38,6 +43,7 @@ class VerificationViewController: UIViewController {
     private func setUpViews() {
         view.addSubview(statusLabel)
         view.addSubview(verificationStackView)
+        view.addSubview(activityIndicator)
     }
 
     private func setUpDelegate() {
@@ -54,7 +60,12 @@ class VerificationViewController: UIViewController {
 
     @objc private func verificationButtonTapped() {
         guard let mailAdress = mailTextField.text else { return }
+        activityIndicator.startAnimating()
+        verificationButton.setStatus(value: .default)
         dataFetcherService.fetchVerificationMailData(mailAdress: mailAdress) { mailResponseViewModel in
+            self.activityIndicator.stopAnimating()
+            self.verificationButton.setStatus(value: .success)
+
             guard let mailResponse = mailResponseViewModel else {
                 CustomAlertController.showAlert(vc: self, title: "Error", message: "Data is empty")
 
@@ -151,7 +162,12 @@ extension VerificationViewController {
             verificationStackView.topAnchor.constraint(equalTo: statusLabel.bottomAnchor, constant: 10),
             verificationStackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
             verificationStackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
-            verificationStackView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -20)
+            verificationStackView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -20),
+        ])
+
+        NSLayoutConstraint.activate([
+            activityIndicator.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            activityIndicator.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: 60),
         ])
 
         NSLayoutConstraint.activate([mailTextField.heightAnchor.constraint(equalToConstant: 40)])
