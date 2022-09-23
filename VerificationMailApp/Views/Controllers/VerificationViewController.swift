@@ -62,7 +62,8 @@ class VerificationViewController: UIViewController {
         guard let mailAdress = mailTextField.text else { return }
         activityIndicator.startAnimating()
         verificationButton.setStatus(value: .default)
-        dataFetcherService.fetchVerificationMailData(mailAdress: mailAdress) { mailResponseViewModel in
+        dataFetcherService.fetchVerificationMailData(mailAdress: mailAdress) { [weak self] mailResponseViewModel in
+            guard let self = self else { return }
             self.activityIndicator.stopAnimating()
             self.verificationButton.setStatus(value: .success)
 
