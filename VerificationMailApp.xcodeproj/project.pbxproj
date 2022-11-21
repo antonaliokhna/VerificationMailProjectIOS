@@ -23,6 +23,7 @@
 		6457389F28DC98C200FEBA26 /* DeliverabilityStatuses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6457389E28DC98C200FEBA26 /* DeliverabilityStatuses.swift */; };
 		645738A128DCC5D200FEBA26 /* MailResponseViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 645738A028DCC5D200FEBA26 /* MailResponseViewModelType.swift */; };
 		645738A328DCC70D00FEBA26 /* ServiceAPIConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 645738A228DCC70D00FEBA26 /* ServiceAPIConfiguration.swift */; };
+		64A4FC1628DF450F00636C1A /* VerificationModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64A4FC1528DF450F00636C1A /* VerificationModelTests.swift */; };
 		64DA2D5928D603360069E08F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64DA2D5828D603360069E08F /* AppDelegate.swift */; };
 		64DA2D5B28D603360069E08F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64DA2D5A28D603360069E08F /* SceneDelegate.swift */; };
 		64DA2D5D28D603360069E08F /* VerificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64DA2D5C28D603360069E08F /* VerificationViewController.swift */; };
@@ -37,6 +38,16 @@
 		64DA2D8528D745690069E08F /* TextFieldActionsDelegateType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64DA2D8428D745690069E08F /* TextFieldActionsDelegateType.swift */; };
 		64DA2D8928D752820069E08F /* CollectionViewActionsDelegateType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64DA2D8828D752820069E08F /* CollectionViewActionsDelegateType.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		64A4FC0F28DF44E000636C1A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 64DA2D4D28D603360069E08F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 64DA2D5428D603360069E08F;
+			remoteInfo = VerificationMailApp;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		6457387E28D8732F00FEBA26 /* VerificationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerificationModel.swift; sourceTree = "<group>"; };
@@ -55,6 +66,8 @@
 		6457389E28DC98C200FEBA26 /* DeliverabilityStatuses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliverabilityStatuses.swift; sourceTree = "<group>"; };
 		645738A028DCC5D200FEBA26 /* MailResponseViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MailResponseViewModelType.swift; sourceTree = "<group>"; };
 		645738A228DCC70D00FEBA26 /* ServiceAPIConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceAPIConfiguration.swift; sourceTree = "<group>"; };
+		64A4FC0B28DF44E000636C1A /* VerificationMailAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VerificationMailAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		64A4FC1528DF450F00636C1A /* VerificationModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerificationModelTests.swift; sourceTree = "<group>"; };
 		64DA2D5528D603360069E08F /* VerificationMailApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VerificationMailApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		64DA2D5828D603360069E08F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		64DA2D5A28D603360069E08F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -74,6 +87,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		64A4FC0828DF44E000636C1A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		64DA2D5228D603360069E08F /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -148,10 +168,27 @@
 			path = Enums;
 			sourceTree = "<group>";
 		};
+		64A4FC0C28DF44E000636C1A /* VerificationMailAppTests */ = {
+			isa = PBXGroup;
+			children = (
+				64A4FC1428DF44EF00636C1A /* Models */,
+			);
+			path = VerificationMailAppTests;
+			sourceTree = "<group>";
+		};
+		64A4FC1428DF44EF00636C1A /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				64A4FC1528DF450F00636C1A /* VerificationModelTests.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		64DA2D4C28D603360069E08F = {
 			isa = PBXGroup;
 			children = (
 				64DA2D5728D603360069E08F /* VerificationMailApp */,
+				64A4FC0C28DF44E000636C1A /* VerificationMailAppTests */,
 				64DA2D5628D603360069E08F /* Products */,
 			);
 			sourceTree = "<group>";
@@ -160,6 +197,7 @@
 			isa = PBXGroup;
 			children = (
 				64DA2D5528D603360069E08F /* VerificationMailApp.app */,
+				64A4FC0B28DF44E000636C1A /* VerificationMailAppTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -261,6 +299,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		64A4FC0A28DF44E000636C1A /* VerificationMailAppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 64A4FC1328DF44E100636C1A /* Build configuration list for PBXNativeTarget "VerificationMailAppTests" */;
+			buildPhases = (
+				64A4FC0728DF44E000636C1A /* Sources */,
+				64A4FC0828DF44E000636C1A /* Frameworks */,
+				64A4FC0928DF44E000636C1A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				64A4FC1028DF44E000636C1A /* PBXTargetDependency */,
+			);
+			name = VerificationMailAppTests;
+			productName = VerificationMailAppTests;
+			productReference = 64A4FC0B28DF44E000636C1A /* VerificationMailAppTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		64DA2D5428D603360069E08F /* VerificationMailApp */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 64DA2D6928D603380069E08F /* Build configuration list for PBXNativeTarget "VerificationMailApp" */;
@@ -288,6 +344,10 @@
 				LastSwiftUpdateCheck = 1400;
 				LastUpgradeCheck = 1400;
 				TargetAttributes = {
+					64A4FC0A28DF44E000636C1A = {
+						CreatedOnToolsVersion = 14.0;
+						TestTargetID = 64DA2D5428D603360069E08F;
+					};
 					64DA2D5428D603360069E08F = {
 						CreatedOnToolsVersion = 14.0;
 					};
@@ -307,11 +367,19 @@
 			projectRoot = "";
 			targets = (
 				64DA2D5428D603360069E08F /* VerificationMailApp */,
+				64A4FC0A28DF44E000636C1A /* VerificationMailAppTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		64A4FC0928DF44E000636C1A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		64DA2D5328D603360069E08F /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -324,6 +392,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		64A4FC0728DF44E000636C1A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				64A4FC1628DF450F00636C1A /* VerificationModelTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		64DA2D5128D603360069E08F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -360,6 +436,14 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		64A4FC1028DF44E000636C1A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 64DA2D5428D603360069E08F /* VerificationMailApp */;
+			targetProxy = 64A4FC0F28DF44E000636C1A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
 		64DA2D5E28D603360069E08F /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
@@ -380,6 +464,42 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		64A4FC1128DF44E100636C1A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 5FC37NQ6S2;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = fladecx.VerificationMailAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/VerificationMailApp.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/VerificationMailApp";
+			};
+			name = Debug;
+		};
+		64A4FC1228DF44E100636C1A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 5FC37NQ6S2;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = fladecx.VerificationMailAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/VerificationMailApp.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/VerificationMailApp";
+			};
+			name = Release;
+		};
 		64DA2D6728D603380069E08F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -553,6 +673,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		64A4FC1328DF44E100636C1A /* Build configuration list for PBXNativeTarget "VerificationMailAppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				64A4FC1128DF44E100636C1A /* Debug */,
+				64A4FC1228DF44E100636C1A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		64DA2D5028D603360069E08F /* Build configuration list for PBXProject "VerificationMailApp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
