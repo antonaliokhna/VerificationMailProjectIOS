@@ -29,7 +29,6 @@ class VerificationViewController: UIViewController {
     )
 
     private let verificationViewModel: VerificationViewModelType = VerificationViewModel()
-    private lazy var dataFetcherService = DataFecherService()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -62,7 +61,7 @@ class VerificationViewController: UIViewController {
         guard let mailAdress = mailTextField.text else { return }
         activityIndicator.startAnimating()
         verificationButton.setStatus(value: .default)
-        dataFetcherService.fetchVerificationMailData(mailAdress: mailAdress) { [weak self] mailResponseViewModel in
+        verificationViewModel.checkAvailabilityEmail(adress: mailAdress) { [weak self] mailResponseViewModel in
             guard let self = self else { return }
             self.activityIndicator.stopAnimating()
             self.verificationButton.setStatus(value: .success)

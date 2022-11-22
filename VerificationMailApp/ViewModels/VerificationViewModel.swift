@@ -10,6 +10,7 @@ import Foundation
 class VerificationViewModel: VerificationViewModelType {
 
     private var verificationModel: VerificationModel
+    private lazy var dataFecherService = DataFecherService()
 
     init(verification model: VerificationModel = VerificationModel()) {
         self.verificationModel = model
@@ -37,5 +38,9 @@ class VerificationViewModel: VerificationViewModelType {
         let domain = getFilteredDomain(by: indexPath)
         clearFilteredDomains()
         return mailAdress + domain
+    }
+
+    func checkAvailabilityEmail(adress: String, response: @escaping (MailResponseViewModelType?) -> Void) {
+        dataFecherService.fetchVerificationMailData(mailAdress: adress, completion: response)
     }
 }

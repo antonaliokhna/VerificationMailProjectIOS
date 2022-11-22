@@ -12,5 +12,6 @@ protocol VerificationViewModelType: AnyObject {
     func getFilteredDomain(by indexPath: IndexPath) -> String
     func getFilteredDomainsCount() -> Int
     func clearFilteredDomains()
-    func getFullMailAdress(by indexPath: IndexPath, currentAdress: String) -> String 
+    func getFullMailAdress(by indexPath: IndexPath, currentAdress: String) -> String
+    func checkAvailabilityEmail(adress: String, response: @escaping (MailResponseViewModelType?) -> Void)
 }
