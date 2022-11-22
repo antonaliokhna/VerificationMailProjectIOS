@@ -25,6 +25,7 @@
 		645738A328DCC70D00FEBA26 /* ServiceAPIConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 645738A228DCC70D00FEBA26 /* ServiceAPIConfiguration.swift */; };
 		647F38BC292BB69200D47DDA /* DomainsCollectionViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 647F38BB292BB69200D47DDA /* DomainsCollectionViewTests.swift */; };
 		647F38BF292C242700D47DDA /* DomainCollectionViewCellTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 647F38BE292C242700D47DDA /* DomainCollectionViewCellTests.swift */; };
+		647F38C7292C55CE00D47DDA /* MailResponseViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 647F38C6292C55CE00D47DDA /* MailResponseViewModelTests.swift */; };
 		64A4FC1628DF450F00636C1A /* VerificationModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64A4FC1528DF450F00636C1A /* VerificationModelTests.swift */; };
 		64DA2D5928D603360069E08F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64DA2D5828D603360069E08F /* AppDelegate.swift */; };
 		64DA2D5B28D603360069E08F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64DA2D5A28D603360069E08F /* SceneDelegate.swift */; };
@@ -70,6 +71,7 @@
 		645738A228DCC70D00FEBA26 /* ServiceAPIConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceAPIConfiguration.swift; sourceTree = "<group>"; };
 		647F38BB292BB69200D47DDA /* DomainsCollectionViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DomainsCollectionViewTests.swift; sourceTree = "<group>"; };
 		647F38BE292C242700D47DDA /* DomainCollectionViewCellTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DomainCollectionViewCellTests.swift; sourceTree = "<group>"; };
+		647F38C6292C55CE00D47DDA /* MailResponseViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MailResponseViewModelTests.swift; sourceTree = "<group>"; };
 		64A4FC0B28DF44E000636C1A /* VerificationMailAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VerificationMailAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		64A4FC1528DF450F00636C1A /* VerificationModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerificationModelTests.swift; sourceTree = "<group>"; };
 		64DA2D5528D603360069E08F /* VerificationMailApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VerificationMailApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -181,9 +183,18 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		647F38C5292C559100D47DDA /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				647F38C6292C55CE00D47DDA /* MailResponseViewModelTests.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
 		64A4FC0C28DF44E000636C1A /* VerificationMailAppTests */ = {
 			isa = PBXGroup;
 			children = (
+				647F38C5292C559100D47DDA /* ViewModels */,
 				647F38BA292BB64E00D47DDA /* Views */,
 				64A4FC1428DF44EF00636C1A /* Models */,
 			);
@@ -410,6 +421,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				647F38C7292C55CE00D47DDA /* MailResponseViewModelTests.swift in Sources */,
 				64A4FC1628DF450F00636C1A /* VerificationModelTests.swift in Sources */,
 				647F38BF292C242700D47DDA /* DomainCollectionViewCellTests.swift in Sources */,
 				647F38BC292BB69200D47DDA /* DomainsCollectionViewTests.swift in Sources */,
