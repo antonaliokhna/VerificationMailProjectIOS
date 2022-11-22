@@ -43,14 +43,13 @@ final class DomainsCollectionViewTests: XCTestCase {
 
         XCTAssertTrue(mockActionsDelegate.collectionViewSelectItemAtCalled)
     }
-}
 
-//MARK: - MockCollectionViewActionsDelegate
+    //MARK: - MockCollectionViewActionsDelegate
+    final class MockCollectionViewActionsDelegate: CollectionViewActionsDelegateType {
+        var collectionViewSelectItemAtCalled = false
 
-final class MockCollectionViewActionsDelegate: CollectionViewActionsDelegateType {
-    var collectionViewSelectItemAtCalled = false
-
-    func collectionViewSelectItemAt(indexPath: IndexPath) {
-        collectionViewSelectItemAtCalled = true
+        func collectionViewSelectItemAt(indexPath: IndexPath) {
+            collectionViewSelectItemAtCalled = true
+        }
     }
 }
