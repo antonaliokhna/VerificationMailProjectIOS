@@ -9,18 +9,18 @@ import Foundation
 
 class MailResponseViewModel: MailResponseViewModelType {
 
-    private var mailResponseMocel: MailResponseModel
+    private var mailResponseModel: MailResponseModel
 
     init(mailResponseMocel: MailResponseModel) {
-        self.mailResponseMocel = mailResponseMocel
+        self.mailResponseModel = mailResponseMocel
     }
 
     func isDeliverable() -> Bool {
-        return mailResponseMocel.deliverability.lowercased() == DeliverabilityStatuses.deliverable.rawValue
+        return mailResponseModel.deliverability.lowercased() == DeliverabilityStatuses.deliverable.rawValue
     }
 
     func getAutoCorrectMail() -> String? {
-        let autocorrect = mailResponseMocel.autocorrect
+        let autocorrect = mailResponseModel.autocorrect
         return autocorrect.isEmpty ? nil : autocorrect
     }
 
