@@ -1,20 +1,20 @@
 # Verification App
 ---
 
-### Цели:
+### Targets:
 
-Данное приложение созданно для проверки структуры и корректности введенного пользователем email-адресса. Приложение помогает выбрать доменный адресс исходя из ввода пользователя в режиме реального времени после знакак "@". После успешной валидации, пользователь может проверить существование данного адресса в сети интерет посредством использования сторонних сервисов API. В случаи ошибки в доменном адрессе почты, приложение предложит заменить его на корретный. 
+This application is designed to check the structure and correctness of the email address entered by the user. The application helps to select a domain address based on the user's real-time input after the "@" sign. After successful validation, the user can check the existence of the address via third party API services. In case of an error in the email domain address, the application will offer to replace it with the correct one.
 
 ---
 
-## Стек используемых технологий:
+## Stack of technologies:
 
 - UIKit (code).
-- Архитектура приложения - MVVM.
-- Продемонстированна работа с многопоточностью при помощи GCD.
-- В качестве сетевых запросов был использованн механизм URLSession.
-- Написано небольшое количество простых Unit тестов.
-- Использованны принципы программирования SOLID
+- The architecture of the application is MVVM.
+- Demonstrated multi-threading using GCD.
+- URLSession was used as the network request mechanism.
+- A small number of simple Unit tests were written.
+- Used SOLID programming principles.
 
 #### Screenshot and gif
 
