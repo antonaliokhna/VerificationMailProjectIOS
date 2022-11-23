@@ -16,6 +16,7 @@
 - Написано небольшое количество простых Unit тестов.
 - Использованны принципы программирования SOLID
 
-#### Screenshot
+#### Screenshot and gif
 
-<img src="VerificationMailApp/Assets.xcassets/ExampleScreen.imageset/ExampleScreen.png" width="300" height="650"/>
+<img class="pull-left" src="VerificationMailApp/Assets.xcassets/ExampleScreen.imageset/ExampleScreen.png" width="300" height="650"/>
+<img style="margin-left: 20px" src="VerificationMailApp/Assets.xcassets/ExampleGif.dataset/ExampleGif.gif" width="300" height="650"/>
